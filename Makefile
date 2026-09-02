@@ -6,7 +6,7 @@
 #   By: tgeler <tgeler@stundent.42.istanbul.com.tr>  +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/09/01 09:08:14 by tgeler              #+#    #+#             #
-#   Updated: 2026/09/02 11:13:06 by tgeler             ###   ########.fr       #
+#   Updated: 2026/09/02 12:48:54 by tgeler             ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,9 @@ MLX_DIR = Library/mlx
 MLX = $(MLX_DIR)/libmlx.a
 MLX_FLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
 
-SRCS = main.c
+SRCS = main.c\
+		srcs/parser/create_fd.c\
+		srcs/parser/create_maps_linked_list.c
 
 OBJS = $(SRCS:.c=.o)
 
