@@ -6,7 +6,7 @@
 #   By: tgeler <tgeler@stundent.42.istanbul.com.tr>  +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/09/01 09:08:14 by tgeler              #+#    #+#             #
-#   Updated: 2026/09/02 10:32:10 by tgeler             ###   ########.fr       #
+#   Updated: 2026/09/02 11:13:06 by tgeler             ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,15 @@ GNL = $(GNL_DIR)/get_next_line.a
 LIBFT_DIR = Library/Libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
+MLX_DIR = Library/mlx
+MLX = $(MLX_DIR)/libmlx.a
+MLX_FLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
+
 SRCS = main.c
 
 OBJS = $(SRCS:.c=.o)
 
-all: libft gnl $(NAME)
+all: libft gnl mlx $(NAME)
 
 libft:
 	make -C $(LIBFT_DIR)
@@ -34,8 +38,11 @@ libft:
 gnl:
 	make -C $(GNL_DIR)
 
-$(NAME): $(OBJS) $(LIBFT) $(GNL)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(GNL) -o $(NAME)
+mlx:
+	make -C $(MLX_DIR)
+
+$(NAME): $(OBJS) $(LIBFT) $(GNL) $(MLX)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(GNL) $(MLX_FLAGS) -o $(NAME)
 
 %.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -44,12 +51,14 @@ clean :
 	rm -f $(OBJS)
 	make clean -C $(LIBFT_DIR)
 	make clean -C $(GNL_DIR)
+	make clean -C $(MLX_DIR)
 
 fclean: clean
 	rm -f $(NAME)
 	make fclean -C $(LIBFT_DIR)
 	make fclean -C $(GNL_DIR)
+	make fclean -C $(MLX_DIR)
 
 re: fclean all
 
-.PHONY: all clean fclean re libft gnl
+.PHONY: all clean fclean re libft gnl mlx
