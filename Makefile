@@ -6,43 +6,50 @@
 #   By: tgeler <tgeler@stundent.42.istanbul.com.tr>  +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/09/01 09:08:14 by tgeler              #+#    #+#             #
-#   Updated: 2026/09/01 09:57:58 by tgeler             ###   ########.fr       #
+#   Updated: 2026/09/02 10:32:10 by tgeler             ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
-CXX = cc
+CC = cc
 
-CXXFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-GNL_DIR = Library/get_next_line/
+GNL_DIR = Library/get_next_line
 GNL = $(GNL_DIR)/get_next_line.a
 
 LIBFT_DIR = Library/Libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-$(GNL):
-	make -C $(GNL_DIR)
-
-$(LIBFT):
-	make -C $(LIBFT_DIR)
-
-SRCS = main.c\
-
-
-
-
+SRCS = main.c
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+all: libft gnl $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) $(LIBFT) $(GNL) -o $(NAME)
+libft:
+	make -C $(LIBFT_DIR)
+
+gnl:
+	make -C $(GNL_DIR)
+
+$(NAME): $(OBJS) $(LIBFT) $(GNL)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(GNL) -o $(NAME)
 
 %.o:%.c
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	rm -f $(OBJS) $()
+	rm -f $(OBJS)
+	make clean -C $(LIBFT_DIR)
+	make clean -C $(GNL_DIR)
+
+fclean: clean
+	rm -f $(NAME)
+	make fclean -C $(LIBFT_DIR)
+	make fclean -C $(GNL_DIR)
+
+re: fclean all
+
+.PHONY: all clean fclean re libft gnl
