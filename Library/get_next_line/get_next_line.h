@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:29:14 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/01 09:08:59 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/02 16:14:55 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int		is_there_a_new_line(char *string, int bytes_read, int i, char mode);
 char	*divide_the_stash(char **line, char **stash);
 char	*get_next_line(int fd);
-int		ft_strlen(char *str);
+int		ft_strlen_gnl(char *str);
 void	fill_it(char *dst, char *src, int j, int i);
 char	*add_to_stash(char **stash, char *buffer, int bytes);
 char	*build_new_malloc_for_stash(char **stash, char *buffer, int bytes_read);

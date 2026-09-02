@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 20:23:03 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/01 09:11:15 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/02 16:14:07 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ char	*ft_strtrim(char const *s1, const char *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif

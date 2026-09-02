@@ -6,7 +6,11 @@
 #   By: tgeler <tgeler@stundent.42.istanbul.com.tr>  +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2025/06/26 14:43:31 by tgeler              #+#    #+#             #
+<<<<<<< HEAD
+#   Updated: 2026/09/02 12:31:48 by tgeler             ###   ########.fr       #
+=======
 #   Updated: 2026/09/02 10:21:22 by tgeler             ###   ########.fr       #
+>>>>>>> 21d6faea6d18cc398b7d0cd93d0815e6281ca370
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +56,8 @@ SRCS = ft_atoi.c \
 	ft_lstadd_front_bonus.c \
 	ft_lstlast_bonus.c \
 	ft_lstnew_bonus.c \
-	ft_lstsize_bonus.c
+	ft_lstsize_bonus.c\
+	ft_lstadd_back_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 
