@@ -6,14 +6,14 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 09:55:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/02 15:03:25 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/02 15:43:22 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs/cub3d.h"
 int main (int argc, char **argv)
 {
-	int		fd;
+	int			fd;
 	t_map_list *map;
 
 	if (argc != 2)
@@ -22,7 +22,9 @@ int main (int argc, char **argv)
 		return (1);
 	if (!create_maps_linked_list(fd, &map))
 		return (1);
-	check_contain_valid_char(map);
+	if (!check_contain_valid_char(map))
+		return (1);
+	return (0);
 }
 
 /*

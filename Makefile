@@ -6,7 +6,7 @@
 #   By: tgeler <tgeler@stundent.42.istanbul.com.tr>  +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/09/01 09:08:14 by tgeler              #+#    #+#             #
-#   Updated: 2026/09/02 12:48:54 by tgeler             ###   ########.fr       #
+#   Updated: 2026/09/02 15:37:38 by tgeler             ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ MLX_FLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
 
 SRCS = main.c\
 		srcs/parser/create_fd.c\
-		srcs/parser/create_maps_linked_list.c
+		srcs/parser/create_maps_linked_list.c\
+		srcs/check_map/check_map_contain_valid_char.c
 
 OBJS = $(SRCS:.c=.o)
 

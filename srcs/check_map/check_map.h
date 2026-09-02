@@ -6,14 +6,13 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:52:54 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/02 15:15:10 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/02 15:36:27 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECK_MAP_H
 # define CHECK_MAP_H
  #include "../parser/parser.h"
-
 	typedef struct	s_traversal_map
 	{
 		int i;

@@ -6,12 +6,13 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 11:26:21 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/02 14:55:58 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/02 15:47:48 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Library/get_next_line/get_next_line.h"
 #include "../../Library/Libft/libft.h"
+#include "parser.h"
 
 void	add_map_lists_back(t_map_list **head, t_map_list *will_add_node)
 {
@@ -63,4 +64,5 @@ int	create_maps_linked_list(int fd, t_map_list **map)
 		add_map_lists_back(map, new_map_list_node);
 		line_content = get_next_line(fd);
 	}
+	return (1);
 }
