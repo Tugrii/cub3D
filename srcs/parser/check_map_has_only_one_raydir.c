@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 09:00:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/03 09:26:19 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/03 13:52:15 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static	int	return_truth_of_raydircount(int	raydir_count)
 	return (1);
 }
 
-int	check_map_has_only_one_raydir(t_map_list *map, char *raydirs)
+int	check_map_has_only_one_raydir(t_map_cont_list *map, char *raydirs)
 {
-	t_map_list	*trv_node;
+	t_map_cont_list	*trv_node;
 	int			raydir_count;
 
 	trv_node = map;
