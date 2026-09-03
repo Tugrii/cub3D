@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 09:55:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/03 08:26:57 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/03 09:16:34 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ int main (int argc, char **argv)
 		return (1);
 	if (!create_maps_linked_list(fd, &map))
 		return (1);
-	if (!check_contain_valid_char(map))
+	if (!check_contain_valid_char(map, "01NSEW "))
 		return (1);
+	if(!check_map_has_only_one_raydir(map, "NSEW"));
 	return (0);
 }
 
@@ -31,8 +32,8 @@ int main (int argc, char **argv)
 Tugra:
 1. dosyayi alip linked list icine yazmak +
 2. NO, SO, WE, EA parselari. (kontrolleri)
-3. map N, S,E ,W karakterlerinden sadece birini icerebilir
-4. map sadece 0,1 N, S, E, W ve bosluk karakterlerini icermeli.
+3. map N, S,E ,W karakterlerinden sadece birini icerebilir 
+4. map sadece 0,1 N, S, E, W ve bosluk karakterlerini icermeli. +
 
 
 

@@ -6,34 +6,32 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 11:24:56 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/02 15:51:40 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/03 09:16:44 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Library/Libft/libft.h"
 #include "check_map.h"
 
-int	check_contain_valid_char(t_map_list *map)
+int	check_contain_valid_char(t_map_list *map, char *valid_chars)
 {
 	t_traversal_map	traversal_map;
-	char			*valid_chars;
-	int				j;
 
-	valid_chars = "01NSEW";
 	traversal_map.node = map;
 	while (traversal_map.node)
 	{
 		traversal_map.i = 0;
 		while (traversal_map.i < traversal_map.node->line_len)
 		{
-			j = 0;
-			while (j < 6)
+			traversal_map.j = 0;
+			while (j < 7)
 			{
-				if (traversal_map.node->line_content[traversal_map.i] == valid_chars[j])
+				if (traversal_map.node->line_content[traversal_map.i]
+					== valid_chars[traversal_map.j])
 					break ;
-				j++;
+				(traversal_map.j)++;
 			}
-			if (j == 7)
+			if (traversal_map.j == 8)
 				return (0);
 			(traversal_map.i)++;
 		}
