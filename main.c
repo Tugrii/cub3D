@@ -6,8 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 09:55:20 by tgeler            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/09/02 15:43:22 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/03 08:26:57 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +41,3 @@ Alper:
 2. ilk arguman olarak .cub uzantili dosyayi almali.
 3. 1 ler duvar olacak sekilde mapin etrafi 1ler ile sarilmali.(harita surrounded olmali)(bosluklarin varligini da goz onune alarak)
 */
-=======
-/*   Updated: 2026/09/02 09:56:20 by tgeler           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <stdio.h>
-
-int main ()
-{
-	printf("aaaaaa");
-}
->>>>>>> 21d6faea6d18cc398b7d0cd93d0815e6281ca370
