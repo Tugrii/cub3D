@@ -6,7 +6,12 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:20:08 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/02 12:20:43 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/07 13:30:10 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	malloc_error()
+{
+	ft_putendl_fd("Could'nt alloceted memory!", 2);
+	exit(1);
+}

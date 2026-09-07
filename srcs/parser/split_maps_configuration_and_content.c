@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:50:52 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/03 15:59:06 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/07 13:23:31 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	split_maps_configuration_and_content(int fd, t_map_all_infos *map_infos)
 	{
 		while (run_if_not_wall(line_content, &line_len))
 		{
-			skip_all_kind_of_whitespaces_then_split(line_content, line_len, map_infos->map_conf);
+			skip_all_kind_of_whitespaces_then_split(&line_content, line_len, map_infos->map_conf);
 			line_content = get_next_line(fd);
 		}
 	}
