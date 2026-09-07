@@ -6,11 +6,13 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:50:52 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/07 13:23:31 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/07 16:15:37 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
+#include "../../Library/Libft/libft.h"
+#include "../../Library/get_next_line/get_next_line.h"
 
 int		run_if_not_wall(char	*line_content, int *line_len)
 {
@@ -20,7 +22,7 @@ int		run_if_not_wall(char	*line_content, int *line_len)
 	i = 0;
 	*line_len = ft_strlen(line_content);
 	wall_chars_count = 0;
-	while (i < len)
+	while (i < *line_len)
 	{
 		if (line_content[i] == '1' || line_content[i] == ' ')
 			wall_chars_count++;
@@ -43,10 +45,13 @@ int	split_maps_configuration_and_content(int fd, t_map_all_infos *map_infos)
 	{
 		while (run_if_not_wall(line_content, &line_len))
 		{
-			skip_all_kind_of_whitespaces_then_split(&line_content, line_len, map_infos->map_conf);
+			read_configs_and_save_it(&line_content, &(map_infos->map_conf));
 			line_content = get_next_line(fd);
 		}
+		if (!create_maps_linked_list(line_content, fd, &(map_infos->map_cont)))
+			malloc_error();
 	}
 	else
 		return (err_msg_int('2'));
+	return (1);
 }

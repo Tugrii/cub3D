@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   skip_all_kind_of_whitespaces_then_split.c          :+:      :+:    :+:   */
+/*   save_conf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/07 14:01:01 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/07 15:53:59 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
+#include "../../Library/Libft/libft.h"
 
-void	save_it_and_free_it(char **line, int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
+void	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 {
 	char	*file_name;
 
@@ -27,10 +28,8 @@ void	save_it_and_free_it(char **line, int identifier_no, char *raw_file_name, t_
 		map_conf->w_texture_name = file_name;
 	else if (identifier_no == 3)
 		map_conf->e_texture_name = file_name;
-	else if (identifier_no == 4 || identifier_no == 5)
-		parse_c_and_f(identifier_no, file_name, map_conf);
-	free (*line);
-	*line = NULL;
+	/* else if (identifier_no == 4 || identifier_no == 5)
+		parse_c_and_f(identifier_no, file_name, map_conf); */
 }
 
 int		is_white_space(char content_index_s_value)
@@ -49,9 +48,20 @@ int		is_white_space(char content_index_s_value)
 	return (0);
 }
 
-char *if_valid_get_file_name(char *content, char **identifiers, int identfier_len, int *identifier_no)
+char	*skip_white_spaces_return_lead(char *content)
+{
+	int		i;
+
+	i = 0;
+	while (is_white_space(content[i]))
+		i++;
+	return (content + i);
+}
+
+char *if_valid_get_file_name(char *content, char **identifiers, int identifier_len, int *identifier_no)
 {
 	int		j;
+	char	*file_name;
 
 	j = 0;
 	while (j < 6)
@@ -59,34 +69,35 @@ char *if_valid_get_file_name(char *content, char **identifiers, int identfier_le
 		if (!ft_strncmp(identifiers[j], content, identifier_len))
 		{
 			*identifier_no = j;
-			return (content + identifier_len);
+			file_name = skip_white_spaces_return_lead(content + identifier_len);
+			return (file_name);
 		}
 		j++;
 	}
 	return (NULL);
 }
-char *is_identifier_return_file_s_name(char *content, char **identifiers, t_map_conf_info *map_conf, int *identifier_no)
+
+char *is_identifier_return_file_s_name(char *content, char **identifiers, int *identifier_no)
 {
 	int		char_count_till_other_whitespace;
 	int		i;
 
 	i = 0;
-	char_count_till_other_white_space = 0;
+	char_count_till_other_whitespace = 0;
 	while (!is_white_space(content[i]))
 	{
-		char_count_till_other_white_space++;
+		char_count_till_other_whitespace++;
 		i++;
 	}
-	if (char_count_till_other_white_space == 1)
+	if (char_count_till_other_whitespace == 1)
 		return (if_valid_get_file_name(content + i, identifiers, 1, identifier_no));
-	else if (char_count_till_other_white_space == 2)
+	else if (char_count_till_other_whitespace == 2)
 		return (if_valid_get_file_name(content + i, identifiers, 2, identifier_no));
 	return (NULL);
 }
 
-void	skip_all_kind_of_whitespaces_then_split(char **content, int content_len, t_map_conf_info *map_conf)
+void	read_configs_and_save_it(char **content, t_map_conf_info *map_conf)
 {
-	int		i;
 	char	*identifiers[6];
 	char	*raw_file_name;
 	int		identifier_no;
@@ -95,17 +106,13 @@ void	skip_all_kind_of_whitespaces_then_split(char **content, int content_len, t_
 	identifiers[1] = "SO";
 	identifiers[2] = "WO";
 	identifiers[3] = "EA";
-	identifiers[4] = 'C';
-	identifiers[5] = 'F';
-	i = 0;
-	while (is_white_space(*content[i]))
-		i++;
-	file_name = is_identifier_return_file_name(*content + i, identifiers, map_conf, &identifier_no);
-	if (file_name)
-		save_it_and_free_it(content, identifier_no, file_name, map_conf);
-	else
-	{
-		free(*content);
-		*content = NULL;
-	}
+	identifiers[4] = "C";
+	identifiers[5] = "F";
+
+	raw_file_name = skip_white_spaces_return_lead(*content);
+	raw_file_name = is_identifier_return_file_s_name(raw_file_name, identifiers, &identifier_no);
+	if (raw_file_name)
+		save_it(identifier_no, raw_file_name, map_conf);
+	free(*content);
+	*content = NULL;
 }

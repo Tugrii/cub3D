@@ -6,9 +6,11 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:20:11 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/03 15:22:23 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/07 15:57:25 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../../Library/Libft/libft.h"
 
 int	err_msg_int(char msg_no)
 {

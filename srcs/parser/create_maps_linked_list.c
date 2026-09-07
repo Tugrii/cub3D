@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 11:26:21 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/03 13:51:46 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/07 15:35:04 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	add_map_lists_back(t_map_cont_list **head, t_map_cont_list *will_add_node)
 		while (traversal->next)
 			traversal = traversal->next;
 		traversal->next = will_add_node;
-	}		
+	}
 }
 
 t_map_cont_list	*set_new_map_node(char *line_content)
@@ -49,13 +49,11 @@ t_map_cont_list	*set_new_map_node(char *line_content)
 	return (new_node);
 }
 
-int	create_maps_linked_list(int fd, t_map_cont_list **map)
+int	create_maps_linked_list(char *line_content, int fd, t_map_cont_list **map)
 {
-	char		*line_content;
 	t_map_cont_list	*new_map_list_node;
 
 	*map = NULL;
-	line_content = get_next_line(fd);
 	while (line_content)
 	{
 		new_map_list_node = set_new_map_node(line_content);

@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:52:54 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/03 09:15:30 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/07 15:32:18 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 	{
 		int i;
 		int	j;
-		t_map_list	*node;
+		t_map_cont_list	*node;
 	}t_traversal_map;
 #endif

@@ -6,11 +6,12 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 09:55:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/03 14:16:23 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/07 16:20:41 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs/cub3d.h"
+#include "Library/Libft/libft.h"
 int main (int argc, char **argv)
 {
 	int				fd;
@@ -22,18 +23,21 @@ int main (int argc, char **argv)
 		return (1);
 	if (!split_maps_configuration_and_content(fd, &map_info))
 		return (1);
-	if (!create_maps_linked_list(fd, &map))
+	if (!check_contain_valid_char(map_info.map_cont, "01NSEW "))
 		return (1);
-	if (!check_contain_valid_char(map, "01NSEW "))
+	if(!check_map_has_only_one_raydir(map_info.map_cont, "NSEW"))
 		return (1);
-	if(!check_map_has_only_one_raydir(map, "NSEW"));
+	ft_putstr_fd(map_info.map_conf.w_texture_name, 1);
+	ft_putstr_fd(map_info.map_conf.e_texture_name, 1);
+	ft_putstr_fd(map_info.map_conf.n_texture_name, 1);
+	ft_putstr_fd(map_info.map_conf.s_texture_name, 1);
 	return (0);
 }
 
 /*
 Tugra:
 1. dosyayi alip linked list icine yazmak +
-2. NO, SO, WE, EA parselari. (kontrolleri) 
+2. NO, SO, WE, EA parselari. (kontrolleri) +
 3. map N, S,E ,W karakterlerinden sadece birini icerebilir +
 4. map sadece 0,1 N, S, E, W ve bosluk karakterlerini icermeli. +
 
