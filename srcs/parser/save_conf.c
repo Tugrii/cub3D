@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/08 11:03:54 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/08 12:10:58 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 		map_conf->w_texture_name = file_name;
 	else if (identifier_no == 3)
 		map_conf->e_texture_name = file_name;
-	/*C VE F NIN PARSE'I BURADA else if (identifier_no == 4 || identifier_no == 5)
+	/*C VE F NIN PARSE'I BURADA ALPER else if (identifier_no == 4 || identifier_no == 5)
 		parse_c_and_f(identifier_no, file_name, map_conf); */
 }
 
