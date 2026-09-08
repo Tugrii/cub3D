@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 09:55:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/07 16:36:01 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/08 09:46:00 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ int main (int argc, char **argv)
 		return (1);
 	if(!check_map_has_only_one_raydir(map_info.map_cont, "NSEW"))
 		return (1);
-	ft_putstr_fd(map_info.map_conf.w_texture_name, 1);
-	ft_putstr_fd(map_info.map_conf.e_texture_name, 1);
-	ft_putstr_fd(map_info.map_conf.n_texture_name, 1);
-	ft_putstr_fd(map_info.map_conf.s_texture_name, 1);
 	return (0);
 }
 

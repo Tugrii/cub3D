@@ -6,7 +6,7 @@
 #   By: tgeler <tgeler@stundent.42.istanbul.com.tr>  +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/09/01 09:08:14 by tgeler              #+#    #+#             #
-#   Updated: 2026/09/07 15:58:49 by tgeler             ###   ########.fr       #
+#   Updated: 2026/09/08 08:41:23 by tgeler             ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = cub3D
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 GNL_DIR = Library/get_next_line
 GNL = $(GNL_DIR)/get_next_line.a
@@ -34,7 +34,8 @@ SRCS = main.c\
 		srcs/parser/split_maps_configuration_and_content.c\
 		srcs/error_msgs/general_error_mesages.c\
 		srcs/error_msgs/malloc_errors.c\
-		srcs/parser/check_map_has_only_one_raydir.c
+		srcs/parser/check_map_has_only_one_raydir.c\
+		srcs/parser/make_line_format_suitable.c
 
 OBJS = $(SRCS:.c=.o)
 
