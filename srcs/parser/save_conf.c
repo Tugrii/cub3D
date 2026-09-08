@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/07 15:53:59 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/08 11:03:54 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 		map_conf->w_texture_name = file_name;
 	else if (identifier_no == 3)
 		map_conf->e_texture_name = file_name;
-	/* else if (identifier_no == 4 || identifier_no == 5)
+	/*C VE F NIN PARSE'I BURADA else if (identifier_no == 4 || identifier_no == 5)
 		parse_c_and_f(identifier_no, file_name, map_conf); */
 }
 
@@ -90,9 +90,9 @@ char *is_identifier_return_file_s_name(char *content, char **identifiers, int *i
 		i++;
 	}
 	if (char_count_till_other_whitespace == 1)
-		return (if_valid_get_file_name(content + i, identifiers, 1, identifier_no));
+		return (if_valid_get_file_name(content, identifiers, 1, identifier_no));
 	else if (char_count_till_other_whitespace == 2)
-		return (if_valid_get_file_name(content + i, identifiers, 2, identifier_no));
+		return (if_valid_get_file_name(content, identifiers, 2, identifier_no));
 	return (NULL);
 }
 
@@ -104,7 +104,7 @@ void	read_configs_and_save_it(char **content, t_map_conf_info *map_conf)
 
 	identifiers[0] = "NO";
 	identifiers[1] = "SO";
-	identifiers[2] = "WO";
+	identifiers[2] = "WE";
 	identifiers[3] = "EA";
 	identifiers[4] = "C";
 	identifiers[5] = "F";
