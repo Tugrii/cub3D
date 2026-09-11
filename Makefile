@@ -35,7 +35,8 @@ SRCS = main.c\
 		srcs/error_msgs/general_error_mesages.c\
 		srcs/error_msgs/malloc_errors.c\
 		srcs/parser/check_map_has_only_one_raydir.c\
-		srcs/parser/make_line_format_suitable.c
+		srcs/parser/make_line_format_suitable.c\
+		srcs/parser/check_file_extension.c
 
 OBJS = $(SRCS:.c=.o)
 
