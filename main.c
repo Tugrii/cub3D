@@ -46,7 +46,7 @@ Tugra:
 --------------------------
 
 Alper:
-1. C , F parse'i
-2. ilk arguman olarak .cub uzantili dosyayi almali.
+1. C , F parse'i +
+2. ilk arguman olarak .cub uzantili dosyayi almali. +
 3. 1 ler duvar olacak sekilde mapin etrafi 1ler ile sarilmali.(harita surrounded olmali)(bosluklarin varligini da goz onune alarak)
 */
