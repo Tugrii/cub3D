@@ -30,6 +30,7 @@ SRCS = main.c\
 		srcs/parser/create_fd.c\
 		srcs/parser/create_maps_linked_list.c\
 		srcs/check_map/check_map_contain_valid_char.c\
+		srcs/check_map/check_walls.c\
 		srcs/parser/save_conf.c\
 		srcs/parser/split_maps_configuration_and_content.c\
 		srcs/error_msgs/general_error_mesages.c\
