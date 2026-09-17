@@ -33,20 +33,19 @@ int main (int argc, char **argv)
 }
 
 /*
+TODO
+
 Tugra:
-1. dosyayi alip linked list icine yazmak +
-2. NO, SO, WE, EA parselari. (kontrolleri) +
-3. map N, S,E ,W karakterlerinden sadece birini icerebilir +
-4. map sadece 0,1 N, S, E, W ve bosluk karakterlerini icermeli. +
-
-
-08.09.2026 11.26 not : 
-	map conf map cont ayirma kismina bir daha bakacagim.
-	map contentinin altindaki yeni satirlarin kabul edilmemesini saglayacagim.
---------------------------
+1. .cub uzanti kontrolunu dosya acilmadan once cagirmak.
+2. C/F renk okumasini configuration akisina baglamak.
+3. Duvar kontrolunu map kontrollerine baglamak.
+4. Oyuncunun baslangic konumunu ve bakis yonunu kaydetmek.
 
 Alper:
-1. C , F parse'i +
-2. ilk arguman olarak .cub uzantili dosyayi almali. +
-3. 1 ler duvar olacak sekilde mapin etrafi 1ler ile sarilmali.(harita surrounded olmali)(bosluklarin varligini da goz onune alarak)
+1. Map ve configuration icin init_map_info() fonksiyonunu hazirlamak.
+2. Map listesi ve texture isimleri icin free_map_info() hazirlamak.
+3. Gecerli/gecersiz RGB, acik duvar ve farkli satir uzunluklari icin
+   kucuk bir .cub test seti hazirlamak.
+
+Yardimci fonksiyonlarin program akisina baglanmasi Tugra'da.
 */
