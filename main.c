@@ -6,7 +6,7 @@
 /*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 09:55:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/08 12:06:56 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/09/08 12:51:58 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int main (int argc, char **argv)
 		return (1);
 	if(!check_map_has_only_one_raydir(map_info.map_cont, "NSEW"))
 		return (1);
+	write(2,"tugra", 5);
+
 	
 	return (0);
 }
