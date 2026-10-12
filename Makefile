@@ -27,6 +27,8 @@ MLX = $(MLX_DIR)/libmlx.a
 MLX_FLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
 
 SRCS = main.c\
+		srcs/parser/init_map_info.c\
+		srcs/parser/free_map_info.c\
 		srcs/parser/create_fd.c\
 		srcs/parser/create_maps_linked_list.c\
 		srcs/check_map/check_map_contain_valid_char.c\
