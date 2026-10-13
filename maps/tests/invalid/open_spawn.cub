@@ -1,0 +1,12 @@
+NO ./Library/mlx/test/open.xpm
+SO ./Library/mlx/test/open.xpm
+WE ./Library/mlx/test/open.xpm
+EA ./Library/mlx/test/open.xpm
+
+F 220,100,0
+C 225,30,0
+
+1N111
+10001
+10001
+11111
