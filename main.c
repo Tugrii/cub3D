@@ -46,7 +46,7 @@ Tugra:
 Alper:
 1. Map ve configuration icin init_map_info() fonksiyonunu hazirlamak.
 2. Map listesi ve texture isimleri icin free_map_info() hazirlamak.
-3. Gecerli/gecersiz RGB, acik duvar ve farkli satir uzunluklari icin
+3. + Gecerli/gecersiz RGB, acik duvar ve farkli satir uzunluklari icin
    kucuk bir .cub test seti hazirlamak.
 
 Yardimci fonksiyonlarin program akisina baglanmasi Tugra'da.
