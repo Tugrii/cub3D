@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split_maps_configuration_and_content.c             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
+/*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:50:52 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/08 12:09:07 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/07 13:43:57 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
+/*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 09:55:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/08 12:51:58 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/07 13:43:57 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main (int argc, char **argv)
 
 	if (argc != 2)
 		return (1);
+	if (!map_name_checking(argv[1]))
+		return (1);
 	if (!create_fd(&fd, argv[1]))
 		return (1);
 	if (!split_maps_configuration_and_content(fd, &map_info))
@@ -28,9 +30,8 @@ int main (int argc, char **argv)
 		return (1);
 	if(!check_map_has_only_one_raydir(map_info.map_cont, "NSEW"))
 		return (1);
-	write(2,"tugra", 5);
-
-	
+	if (!check_walls(map_info.map_cont))
+		return (1);
 	return (0);
 }
 
@@ -38,9 +39,9 @@ int main (int argc, char **argv)
 TODO
 
 Tugra:
-1. .cub uzanti kontrolunu dosya acilmadan once cagirmak.
-2. C/F renk okumasini configuration akisina baglamak.
-3. Duvar kontrolunu map kontrollerine baglamak.
+1. .cub uzanti kontrolunu dosya acilmadan once cagirmak. +
+2. C/F renk okumasini configuration akisina baglamak. +
+3. Duvar kontrolunu map kontrollerine baglamak. +
 4. Oyuncunun baslangic konumunu ve bakis yonunu kaydetmek.
 
 Alper:
