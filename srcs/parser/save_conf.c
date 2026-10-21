@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/07 13:43:57 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/21 23:56:14 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 
 	file_name = ft_strdup(raw_file_name);
 	if (!file_name)
-		malloc_error();
+		malloc_error(NULL);
 	if (identifier_no == 0)
 		map_conf->n_texture_name = file_name;
 	else if (identifier_no == 1)

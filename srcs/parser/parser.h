@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:06:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/07 13:43:57 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/21 22:47:37 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct	s_map_all_infos
 {
 	t_map_conf_info		map_conf;
 	t_map_cont_list		*map_cont;
+	char				**map_cont_arr;
 }t_map_all_infos;
 
 void	read_configs_and_save_it(char **content, t_map_conf_info *map_conf);
