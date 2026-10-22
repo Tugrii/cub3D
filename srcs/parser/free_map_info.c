@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 00:07:29 by alkoc             #+#    #+#             */
-/*   Updated: 2026/10/22 00:57:11 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/22 21:24:26 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void free_map_arr(t_map_all_infos *info)
 		i++;
 		traversal = traversal->next;
 	}
-	free(map_cont_arr);
+	free(info->map_cont_arr);
 }
 
 void	free_map_info(t_map_all_infos *info)

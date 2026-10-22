@@ -6,7 +6,7 @@
 #   By: <tgeler@stundent.42.istanbul.com.tr>         +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/09/01 09:08:14 by tgeler              #+#    #+#             #
-#   Updated: 2026/10/07 13:43:57 by tgeler             ###   ########.fr       #
+#   Updated: 2026/10/22 21:19:27 by tgeler             ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ SRCS = main.c\
 		srcs/parser/check_map_has_only_one_raydir.c\
 		srcs/parser/make_line_format_suitable.c\
 		srcs/parser/check_file_extension.c\
-		srcs/parser/read_colors.c
+		srcs/parser/read_colors.c\
+		srcs/parser/convert_mapcont_list_to_array.c
 
 OBJS = $(SRCS:.c=.o)
 

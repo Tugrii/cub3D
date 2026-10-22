@@ -6,12 +6,13 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/22 00:58:36 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/22 21:25:28 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 #include "../../Library/Libft/libft.h"
+#include "../error_msgs/error_msgs.h"
 
 void	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 {

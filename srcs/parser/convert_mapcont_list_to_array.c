@@ -6,11 +6,13 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 22:00:46 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/21 23:59:32 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/22 21:27:46 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
+#include <stdlib.h>
+#include "../error_msgs/error_msgs.h"
 
 void	convert_mapcont_list_to_array(t_map_all_infos	*map_info)
 {
@@ -31,10 +33,10 @@ void	convert_mapcont_list_to_array(t_map_all_infos	*map_info)
 	line_num = 0;
 	while (traversal)
 	{
-		map_info->map_cont_arr[line_num] = malloc(sizeof(char) * (traversal->line_len + 1))
+		map_info->map_cont_arr[line_num] = malloc(sizeof(char) * (traversal->line_len + 1));
 		if (!(map_info->map_cont_arr[line_num]))
 			malloc_error(map_info);
-		map_info->map_cont_arr[line_num][traversal->line_line] = '\0';
+		map_info->map_cont_arr[line_num][traversal->line_len] = '\0';
 		line_num++;
 		traversal = traversal->next;
 	}

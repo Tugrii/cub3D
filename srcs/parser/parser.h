@@ -6,14 +6,12 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:06:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/21 22:47:37 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/22 21:22:42 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	PARSER_H
 # define PARSER_H
-
- #include "../error_msgs/error_msgs.h"
 
 typedef struct s_map_cont_list
 {

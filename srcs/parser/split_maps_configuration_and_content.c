@@ -6,13 +6,14 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:50:52 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/21 23:48:19 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/22 21:26:00 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 #include "../../Library/Libft/libft.h"
 #include "../../Library/get_next_line/get_next_line.h"
+#include "../error_msgs/error_msgs.h"
 
 int		run_if_not_wall(char	*line_content)
 {
