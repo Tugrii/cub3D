@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 00:07:29 by alkoc             #+#    #+#             */
-/*   Updated: 2026/10/22 21:24:26 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/22 22:15:11 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ void	free_map_info(t_map_all_infos *info)
 	free(info->map_conf.s_texture_name);
 	free(info->map_conf.w_texture_name);
 	free(info->map_conf.e_texture_name);
+	free(info);
+	info = NULL;
 	init_map_info(info);
 }

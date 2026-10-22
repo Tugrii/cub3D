@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 09:55:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/07 13:43:57 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/22 22:01:06 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,9 @@
 int main (int argc, char **argv)
 {
 	int				fd;
-	t_map_all_infos	map_info;
+	t_map_all_infos	*map_info;
 
-	if (argc != 2)
-		return (1);
-	if (!map_name_checking(argv[1]))
-		return (1);
-	if (!create_fd(&fd, argv[1]))
-		return (1);
-	if (!split_maps_configuration_and_content(fd, &map_info))
-		return (1);
-	if (!check_contain_valid_char(map_info.map_cont, "01NSEW "))
-		return (1);
-	if(!check_map_has_only_one_raydir(map_info.map_cont, "NSEW"))
-		return (1);
-	if (!check_walls(map_info.map_cont))
+	if (!check_map(argc, argv, &fd, &map_info))
 		return (1);
 	return (0);
 }
