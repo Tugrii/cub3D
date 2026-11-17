@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map_info.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alkoc <alkoc@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 18:26:47 by alkoc             #+#    #+#             */
-/*   Updated: 2026/10/02 18:26:47 by alkoc            ###   ########.fr       */
+/*   Updated: 2026/10/22 00:02:50 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	init_map_info(t_map_all_infos *info)
 	if (!info)
 		return ;
 	info->map_cont = NULL;
+	info->map_cont_arr = NULL;
 	info->map_conf.n_texture_name = NULL;
 	info->map_conf.s_texture_name = NULL;
 	info->map_conf.w_texture_name = NULL;

@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_has_only_one_raydir.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
+/*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 09:00:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/07 16:08:39 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/22 21:44:53 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
-#include "../check_map/check_map.h"
-
+#include "../parser/parser.h"
+#include "check_map.h"
 
 static	int	return_truth_of_raydircount(int	raydir_count)
 {

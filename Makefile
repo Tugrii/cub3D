@@ -3,10 +3,10 @@
 #                                                          :::      ::::::::   #
 #   Makefile                                             :+:      :+:    :+:   #
 #                                                      +:+ +:+         +:+     #
-#   By: tgeler <tgeler@stundent.42.istanbul.com.tr>  +#+  +:+       +#+        #
+#   By: <tgeler@stundent.42.istanbul.com.tr>         +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/09/01 09:08:14 by tgeler              #+#    #+#             #
-#   Updated: 2026/09/08 08:41:23 by tgeler             ###   ########.fr       #
+#   Updated: 2026/10/22 22:29:00 by tgeler             ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,20 +27,22 @@ MLX = $(MLX_DIR)/libmlx.a
 MLX_FLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
 
 SRCS = main.c\
-		srcs/parser/init_map_info.c\
-		srcs/parser/free_map_info.c\
-		srcs/parser/create_fd.c\
-		srcs/parser/create_maps_linked_list.c\
+		srcs/check_map/check_file_extension.c\
 		srcs/check_map/check_map_contain_valid_char.c\
+		srcs/check_map/check_map_has_only_one_raydir.c\
 		srcs/check_map/check_walls.c\
-		srcs/parser/save_conf.c\
-		srcs/parser/split_maps_configuration_and_content.c\
+		srcs/check_map/check_map.c\
 		srcs/error_msgs/general_error_mesages.c\
 		srcs/error_msgs/malloc_errors.c\
-		srcs/parser/check_map_has_only_one_raydir.c\
+		srcs/parser/convert_mapcont_list_to_array.c\
+		srcs/parser/create_fd.c\
+		srcs/parser/create_maps_linked_list.c\
+		srcs/parser/free_map_info.c\
+		srcs/parser/init_map_info.c\
 		srcs/parser/make_line_format_suitable.c\
-		srcs/parser/check_file_extension.c\
-		srcs/parser/read_colors.c
+		srcs/parser/read_colors.c\
+		srcs/parser/save_conf.c\
+		srcs/parser/split_maps_configuration_and_content.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   split_maps_configuration_and_content.c             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgeler@stundent.42.istanbul.com.tr         +#+  +:+       +#+        */
+/*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:50:52 by tgeler            #+#    #+#             */
-/*   Updated: 2026/09/08 12:09:07 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/10/22 21:26:00 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 #include "../../Library/Libft/libft.h"
 #include "../../Library/get_next_line/get_next_line.h"
+#include "../error_msgs/error_msgs.h"
 
 int		run_if_not_wall(char	*line_content)
 {
@@ -50,7 +51,7 @@ int	split_maps_configuration_and_content(int fd, t_map_all_infos *map_infos)
 			line_content = get_next_line(fd);
 		}
 		if (!create_maps_linked_list(line_content, fd, &(map_infos->map_cont)))
-			malloc_error();
+			malloc_error(map_infos);
 	}
 	else
 		return (err_msg_int('2'));
