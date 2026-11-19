@@ -27,16 +27,20 @@ int main (int argc, char **argv)
 TODO
 
 Tugra:
-1. .cub uzanti kontrolunu dosya acilmadan once cagirmak. +
-2. C/F renk okumasini configuration akisina baglamak. +
-3. Duvar kontrolunu map kontrollerine baglamak. +
-4. Oyuncunun baslangic konumunu ve bakis yonunu kaydetmek.
+1. Configuration okumasinda bos satir ve dosya sonunu ele almak,
+   RGB hatasini ust akis tarafina iletmek.
+2. Haritayi double array'e donusturmeyi tamamlayip akisa baglamak.
+3. Oyuncunun baslangic konumunu ve bakis yonunu kaydetmek.
+4. Basarili ve hatali cikislarda hata mesajlarini, close(fd) ve
+   temizleme cagrilarini duzenlemek.
 
 Alper:
-1. Map ve configuration icin init_map_info() fonksiyonunu hazirlamak.
-2. Map listesi ve texture isimleri icin free_map_info() hazirlamak.
-3. + Gecerli/gecersiz RGB, acik duvar ve farkli satir uzunluklari icin
-   kucuk bir .cub test seti hazirlamak.
+1. Dort texture yolu ve C/F renklerinin atanmis oldugunu kontrol
+   eden configuration tamamlik yardimcisini hazirlamak.
+2. free_map_info() fonksiyonunu map_cont_arr olusmamis veya yarim
+   olusturulmusken de guvenli temizleme yapacak sekilde duzenlemek.
+3. Bos dosya, eksik ayar, yalnizca ayar iceren dosya ve gecersiz
+   harita karakteri icin test dosyalari eklemek.
 
 Yardimci fonksiyonlarin program akisina baglanmasi Tugra'da.
 */
