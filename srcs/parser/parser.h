@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:06:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/22 21:22:42 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/19 22:22:03 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct	s_map_all_infos
 	char				**map_cont_arr;
 }t_map_all_infos;
 
-void	read_configs_and_save_it(char **content, t_map_conf_info *map_conf);
+int		read_configs_and_save_it(char **content, t_map_conf_info *map_conf);
 int		create_maps_linked_list(char *line_content, int fd, t_map_cont_list **map);
 void	make_line_format_suitable(char *line_content, int *line_len);
 int		read_colors(int id, char *str, t_map_conf_info *conf);
