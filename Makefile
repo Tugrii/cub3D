@@ -27,6 +27,7 @@ MLX = $(MLX_DIR)/libmlx.a
 MLX_FLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
 
 SRCS = main.c\
+		srcs/check_map/check_config.c\
 		srcs/check_map/check_file_extension.c\
 		srcs/check_map/check_map_contain_valid_char.c\
 		srcs/check_map/check_map_has_only_one_raydir.c\
