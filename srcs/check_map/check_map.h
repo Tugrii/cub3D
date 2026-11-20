@@ -24,6 +24,7 @@
 
 	int		check_contain_valid_char(t_map_cont_list *map, char *valid_chars);
 	int		check_walls(t_map_cont_list *map);
+	int		check_config(t_map_conf_info *conf);
 	int		map_name_checking(char *map_name);
 	int		create_fd(int *fd, char *map_name);
 	int		create_maps_linked_list(char *line_content, int fd, t_map_cont_list **map);
