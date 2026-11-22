@@ -43,4 +43,5 @@ void	make_line_format_suitable(char *line_content, int *line_len);
 int		read_colors(int id, char *str, t_map_conf_info *conf);
 void	init_map_info(t_map_all_infos *info);
 void	free_map_info(t_map_all_infos *info);
+void	free_partial_map_info(t_map_all_infos *info, int saved_rows);
 #endif

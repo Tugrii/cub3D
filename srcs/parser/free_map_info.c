@@ -56,3 +56,22 @@ void	free_map_info(t_map_all_infos *info)
 	info = NULL;
 	init_map_info(info);
 }
+
+void	free_partial_map_info(t_map_all_infos *info, int saved_rows)
+{
+	int	i;
+
+	if (!info)
+		return ;
+	i = 0;
+	while (info->map_cont_arr && i < saved_rows)
+	{
+		free(info->map_cont_arr[i]);
+		i++;
+	}
+	free(info->map_cont_arr);
+	info->map_cont_arr = NULL;
+	free_map(info->map_cont);
+	info->map_cont = NULL;
+	free_map_info(info);
+}
