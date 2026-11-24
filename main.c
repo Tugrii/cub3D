@@ -36,9 +36,9 @@ Tugra:
 
 Alper:
 1. Dort texture yolu ve C/F renklerinin atanmis oldugunu kontrol
-   eden configuration tamamlik yardimcisini hazirlamak.
+   eden configuration tamamlik yardimcisini hazirlamak. +
 2. free_map_info() fonksiyonunu map_cont_arr olusmamis veya yarim
-   olusturulmusken de guvenli temizleme yapacak sekilde duzenlemek.
+   olusturulmusken de guvenli temizleme yapacak sekilde duzenlemek. +
 3. Bos dosya, eksik ayar, yalnizca ayar iceren dosya ve gecersiz
    harita karakteri icin test dosyalari eklemek.
 

@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/24 23:47:10 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/25 00:16:35 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../../Library/Libft/libft.h"
 #include "../error_msgs/error_msgs.h"
 
-void	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
+int	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 {
 	char	*file_name;
 
@@ -30,7 +30,8 @@ void	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 	else if (identifier_no == 3)
 		map_conf->e_texture_name = file_name;
 	else if (identifier_no == 4 || identifier_no == 5)
-		read_colors(identifier_no, file_name, map_conf);
+		return (read_colors(identifier_no, file_name, map_conf));
+	return (1);
 }
 
 int		is_white_space(char content_index_s_value)
@@ -85,7 +86,7 @@ char *is_identifier_return_file_s_name(char *content, char **identifiers, int *i
 
 	i = 0;
 	char_count_till_other_whitespace = 0;
-	while (!is_white_space(content[i]))
+	while (!is_white_space(content[i]) && content[0] != '\0')
 	{
 		char_count_till_other_whitespace++;
 		i++;
@@ -118,8 +119,7 @@ int	read_configs_and_save_it(char **content, t_map_conf_info *map_conf)
 			return (err_msg_int('3'));
 	}
 	else
-		return (if_is_nl_return_true(content));
-	free(*content);
-	*content = NULL;
+		return (if_is_null_return_true(content));
+	free_content(content);
 	return (1);
 }
