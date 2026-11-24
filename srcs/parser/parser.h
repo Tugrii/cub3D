@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:06:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/19 22:22:03 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/25 00:12:04 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ void	make_line_format_suitable(char *line_content, int *line_len);
 int		read_colors(int id, char *str, t_map_conf_info *conf);
 void	init_map_info(t_map_all_infos *info);
 void	free_map_info(t_map_all_infos *info);
-void	free_partial_map_info(t_map_all_infos *info, int saved_rows);
+int		if_is_null_return_true(char **content);
+void	free_content(char **content);
 #endif

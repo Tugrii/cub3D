@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/19 22:23:32 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/25 00:16:35 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char *is_identifier_return_file_s_name(char *content, char **identifiers, int *i
 
 	i = 0;
 	char_count_till_other_whitespace = 0;
-	while (!is_white_space(content[i]))
+	while (!is_white_space(content[i]) && content[0] != '\0')
 	{
 		char_count_till_other_whitespace++;
 		i++;
@@ -114,10 +114,12 @@ int	read_configs_and_save_it(char **content, t_map_conf_info *map_conf)
 	raw_file_name = skip_white_spaces_return_lead(*content);
 	raw_file_name = is_identifier_return_file_s_name(raw_file_name, identifiers, &identifier_no);
 	if (raw_file_name)
+	{
 		if (!save_it(identifier_no, raw_file_name, map_conf))
 			return (err_msg_int('3'));
+	}
 	else
-		return (err_msg_int('4'));
-	free(*content);
-	*content = NULL;
+		return (if_is_null_return_true(content));
+	free_content(content);
+	return (1);
 }

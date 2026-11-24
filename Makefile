@@ -6,7 +6,7 @@
 #   By: <tgeler@stundent.42.istanbul.com.tr>         +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/09/01 09:08:14 by tgeler              #+#    #+#             #
-#   Updated: 2026/10/22 22:29:00 by tgeler             ###   ########.fr       #
+#   Updated: 2026/11/24 23:44:55 by tgeler             ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRCS = main.c\
 		srcs/parser/make_line_format_suitable.c\
 		srcs/parser/read_colors.c\
 		srcs/parser/save_conf.c\
+		srcs/parser/save_conf_utils.c\
 		srcs/parser/split_maps_configuration_and_content.c
 
 OBJS = $(SRCS:.c=.o)
