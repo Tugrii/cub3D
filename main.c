@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 09:55:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/22 22:01:06 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/24 22:43:58 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ TODO
 
 Tugra:
 1. Configuration okumasinda bos satir ve dosya sonunu ele almak,
-   RGB hatasini ust akis tarafina iletmek.
-2. Haritayi double array'e donusturmeyi tamamlayip akisa baglamak.
-3. Oyuncunun baslangic konumunu ve bakis yonunu kaydetmek.
-4. Basarili ve hatali cikislarda hata mesajlarini, close(fd) ve
+2. RGB hatasini ust akis tarafina iletmek. +
+3. Haritayi double array'e donusturmeyi tamamlayip akisa baglamak.
+4. Oyuncunun baslangic konumunu ve bakis yonunu kaydetmek.
+5. Basarili ve hatali cikislarda hata mesajlarini, close(fd) ve
    temizleme cagrilarini duzenlemek.
 
 Alper:

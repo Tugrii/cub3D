@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/22 21:25:28 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/24 23:47:10 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char *is_identifier_return_file_s_name(char *content, char **identifiers, int *i
 	return (NULL);
 }
 
-void	read_configs_and_save_it(char **content, t_map_conf_info *map_conf)
+int	read_configs_and_save_it(char **content, t_map_conf_info *map_conf)
 {
 	char	*identifiers[6];
 	char	*raw_file_name;
@@ -113,7 +113,13 @@ void	read_configs_and_save_it(char **content, t_map_conf_info *map_conf)
 	raw_file_name = skip_white_spaces_return_lead(*content);
 	raw_file_name = is_identifier_return_file_s_name(raw_file_name, identifiers, &identifier_no);
 	if (raw_file_name)
-		save_it(identifier_no, raw_file_name, map_conf);
+	{
+		if (!save_it(identifier_no, raw_file_name, map_conf))
+			return (err_msg_int('3'));
+	}
+	else
+		return (if_is_nl_return_true(content));
 	free(*content);
 	*content = NULL;
+	return (1);
 }
