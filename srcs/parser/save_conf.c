@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/25 00:16:35 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/25 23:53:15 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 {
 	char	*file_name;
 
+	if (is_saved_before(map_conf, identifier_no))
+		return (err_msg_int('5'));
 	file_name = ft_strdup(raw_file_name);
 	if (!file_name)
 		malloc_error_at_start(map_conf);
@@ -30,7 +32,8 @@ int	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 	else if (identifier_no == 3)
 		map_conf->e_texture_name = file_name;
 	else if (identifier_no == 4 || identifier_no == 5)
-		return (read_colors(identifier_no, file_name, map_conf));
+		if (!read_colors(identifier_no, file_name, map_conf))
+			return (err_msg_int('3'));
 	return (1);
 }
 
@@ -116,7 +119,7 @@ int	read_configs_and_save_it(char **content, t_map_conf_info *map_conf)
 	if (raw_file_name)
 	{
 		if (!save_it(identifier_no, raw_file_name, map_conf))
-			return (err_msg_int('3'));
+			return (0);
 	}
 	else
 		return (if_is_null_return_true(content));

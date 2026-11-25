@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:06:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/25 00:12:04 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/25 23:43:22 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ void	init_map_info(t_map_all_infos *info);
 void	free_map_info(t_map_all_infos *info);
 int		if_is_null_return_true(char **content);
 void	free_content(char **content);
+int		is_saved_before(t_map_conf_info *conf_info, int identifier_no);
 #endif

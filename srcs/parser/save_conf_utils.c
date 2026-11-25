@@ -6,13 +6,40 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 23:29:58 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/25 00:11:50 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/25 23:42:43 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 #include <stdlib.h>
 #include "../error_msgs/error_msgs.h"
+
+int	is_saved_before(t_map_conf_info *conf_info, int identifier_no)
+{
+	if (identifier_no == 0)
+		if (conf_info->n_texture_name)
+			return (1);
+	if (identifier_no == 1)
+		if (conf_info->s_texture_name)
+			return (1);
+	if (identifier_no == 2)
+		if (conf_info->w_texture_name)
+			return (1);
+	if (identifier_no == 3)
+		if (conf_info->e_texture_name)
+			return (1);
+	if (identifier_no == 4)
+		if (conf_info->c_rgb_colors[0] != -1 &&
+			conf_info->c_rgb_colors[1] != -1 &&
+				conf_info->c_rgb_colors[2] != -1)
+					return (1);
+	if (identifier_no == 5)
+		if (conf_info->f_rgb_colors[0] != -1 &&
+			conf_info->f_rgb_colors[1] != -1 &&
+				conf_info->f_rgb_colors[2] != -1)
+					return (1);
+	return (0);
+}
 
 void	free_content(char **content)
 {
