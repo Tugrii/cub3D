@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 09:55:20 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/24 22:43:58 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 01:25:50 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main (int argc, char **argv)
 TODO
 
 Tugra:
-1. Configuration okumasinda bos satir ve dosya sonunu ele almak,
+1. Configuration okumasinda bos satir ve dosya sonunu ele almak +
 2. RGB hatasini ust akis tarafina iletmek. +
 3. Haritayi double array'e donusturmeyi tamamlayip akisa baglamak.
 4. Oyuncunun baslangic konumunu ve bakis yonunu kaydetmek.

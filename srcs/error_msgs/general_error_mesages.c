@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:20:11 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/25 23:51:13 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 01:02:06 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int	err_msg_int(char msg_no)
 		ft_putendl_fd("Error\n.cub file is contain invalid line!", 2);
 	if (msg_no == '5')
 		ft_putendl_fd("Error\n.cub file has extra configuration info!", 2);
+	if (msg_no == '6')
+		ft_putendl_fd("Error\n Map content has extra invalid line(s)!", 2);
 	return (0);
 }

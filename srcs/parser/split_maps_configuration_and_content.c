@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:50:52 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/19 22:26:35 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 01:06:08 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int	split_maps_configuration_and_content(int fd, t_map_all_infos *map_infos)
 				return (0);
 			line_content = get_next_line(fd);
 		}
-		if (!create_maps_linked_list(line_content, fd, &(map_infos->map_cont)))
-			malloc_error(map_infos);
+		if (!create_maps_linked_list(line_content, fd, map_infos))
+			return (0);
 	}
 	else
 		return (err_msg_int('2'));
