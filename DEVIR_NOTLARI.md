@@ -1,3 +1,5 @@
 **alper:** Harita dizisi yarım kaldığında ayrılan belleği temizlemek için `free_partial_map_info(info, saved_rows)` fonksiyonunu ekledim. Fonksiyon `free_map_info.c` içinde.
 
 Harita listesinde üçüncü satır için bellek ayırırken hata alınırsa eğer `saved_rows` değeri 2 olacaktır. Buna göre de fonksiyon dizideki ilk iki satırı, dizinin kendisini ve bağlı listeyi serbest bırakır. Ardından texture yollarını ve ana yapıyı temizlemek için mevcut `free_map_info()` fonksiyonunu çağırır. 
+
+**alper:** `maps/tests/invalid/` klasörüne dört parser testi ekledim. Her dosyanın açıklayıcı bir hatayla kapanması gerekiyor. WSL'de geçerli referans haritası `0` ile çıktı. `empty.cub` boş dosya mesajıyla `1` döndürdü. `missing_ceiling.cub` içinde C satırı eksik olmasına rağmen program `0` döndürdü. `config_only.cub` dosyasında ayarlar bittikten sonra harita gelmeyince program çöktü (`139`). `invalid_char.cub` haritada X karakteriyle `1` döndürdü, ancak hata mesajı çıkmadı. Parser akışındaki çalışmalar tamamlandığında bu dört dosyayı tekrar çalıştırabiliriz.

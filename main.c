@@ -40,7 +40,7 @@ Alper:
 2. free_map_info() fonksiyonunu map_cont_arr olusmamis veya yarim
    olusturulmusken de guvenli temizleme yapacak sekilde duzenlemek. +
 3. Bos dosya, eksik ayar, yalnizca ayar iceren dosya ve gecersiz
-   harita karakteri icin test dosyalari eklemek.
+   harita karakteri icin test dosyalari eklemek. +
 
 Yardimci fonksiyonlarin program akisina baglanmasi Tugra'da.
 */
