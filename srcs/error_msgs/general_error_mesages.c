@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:20:11 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/26 21:21:24 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 21:32:45 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ int	err_msg_int(char msg_no, char *msg_content)
 		ft_putstr_fd("Error\nMap does not contatin ", 2);
 		ft_putendl_fd(msg_content, 2);
 	}
+	if (msg_no == '8')
+		ft_putendl_fd("Error\nMap content does not exist!", 2);
 	return (0);
 }

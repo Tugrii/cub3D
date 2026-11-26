@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:50:52 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/26 21:19:24 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 21:47:02 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ int		run_if_not_wall(char	*line_content)
 int	split_maps_configuration_and_content(int fd, t_map_all_infos *map_infos)
 {
 	char	*line_content;
+	int		validty_flag;
 
+	validty_flag = 1;
 	line_content = get_next_line(fd);
 	if (line_content)
 	{
@@ -50,10 +52,12 @@ int	split_maps_configuration_and_content(int fd, t_map_all_infos *map_infos)
 			if (!read_configs_and_save_it(&line_content, &(map_infos->map_conf)))
 				return (0);
 			line_content = get_next_line(fd);
+			if (!line_content)
+				break ;
 		}
-		if (!does_have_all_conf(&(map_infos->map_conf)))
-			return (0);
-		if (!create_maps_linked_list(line_content, fd, map_infos))
+		validty_flag = does_have_all_conf(&(map_infos->map_conf));
+		validty_flag = create_maps_linked_list(line_content, fd, map_infos);
+		if (!validty_flag)
 			return (0);
 	}
 	else
