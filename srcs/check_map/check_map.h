@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:52:54 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/27 00:09:26 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/27 01:37:22 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
  void	malloc_err_msg_ex();
  int	err_msg_int(char msg_no, char *msg_content);
  int	err_msg_int_2(char msg_no);
+ void	free_map_info(t_map_all_infos *info);
 
 	typedef struct	s_traversal_map
 	{

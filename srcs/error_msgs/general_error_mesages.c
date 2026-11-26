@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:20:11 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/27 00:09:07 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/27 01:23:43 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ int	err_msg_int_2(char msg_no)
 {
 	if (msg_no == '0')
 		ft_putendl_fd("Error\nMap did not covered with walls!", 2);
+	if (msg_no == '1')
+		ft_putendl_fd("Error\nUser entered none or more than one argument!", 2);
+	if (msg_no == '2')
+		ft_putendl_fd("Error\nMap name's extention does not end with .cub!", 2);
+	if (msg_no == '3')
+		ft_putendl_fd("Error\nFD error!", 2);
 	return (0);
 }
 
