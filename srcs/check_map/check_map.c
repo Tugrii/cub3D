@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 21:33:21 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/22 22:32:30 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/27 00:08:21 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 int	check_map(int argc, char **argv, int *fd, t_map_all_infos **map_info)
 {
+	int	validty_flag;
+
+	validty_flag = 1;
 	*map_info = malloc(sizeof(t_map_all_infos));
 	if (!(*map_info))
 		malloc_err_msg_ex();
@@ -28,10 +31,12 @@ int	check_map(int argc, char **argv, int *fd, t_map_all_infos **map_info)
 	if (!split_maps_configuration_and_content(*fd, *map_info))
 		return (0);
 	if (!check_contain_valid_char((*map_info)->map_cont, "01NSEW "))
-		return (0);
+		validty_flag = err_msg_int('9', NULL);
 	if(!check_map_has_only_one_raydir((*map_info)->map_cont, "NSEW"))
-		return (0);
+		validty_flag = err_msg_int('0', NULL);
 	if (!check_walls((*map_info)->map_cont))
+		validty_flag = err_msg_int_2('0');
+	if (!validty_flag)
 		return (0);
 	return (1);
 }

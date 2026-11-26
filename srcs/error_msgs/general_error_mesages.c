@@ -6,11 +6,18 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:20:11 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/26 21:32:45 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/27 00:09:07 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Library/Libft/libft.h"
+
+int	err_msg_int_2(char msg_no)
+{
+	if (msg_no == '0')
+		ft_putendl_fd("Error\nMap did not covered with walls!", 2);
+	return (0);
+}
 
 int	err_msg_int(char msg_no, char *msg_content)
 {
@@ -33,5 +40,10 @@ int	err_msg_int(char msg_no, char *msg_content)
 	}
 	if (msg_no == '8')
 		ft_putendl_fd("Error\nMap content does not exist!", 2);
+	if (msg_no == '9')
+		ft_putendl_fd("Error\nMap content has invalid char(s)!", 2);
+	if (msg_no == '0')
+		ft_putendl_fd(
+		"Error\nThere are extra raydir(s) inside the map content!", 2);
 	return (0);
 }

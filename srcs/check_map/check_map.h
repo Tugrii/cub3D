@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:52:54 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/26 01:23:07 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/27 00:09:26 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define CHECK_MAP_H
  #include "../parser/parser.h"
  void	malloc_err_msg_ex();
+ int	err_msg_int(char msg_no, char *msg_content);
+ int	err_msg_int_2(char msg_no);
 
 	typedef struct	s_traversal_map
 	{

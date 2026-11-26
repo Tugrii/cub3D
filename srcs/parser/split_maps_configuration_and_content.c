@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:50:52 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/26 21:47:02 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/27 00:21:13 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,23 @@ int		run_if_not_wall(char	*line_content)
 	int		wall_chars_count;
 	int		line_len;
 
-	i = 0;
-	line_len = ft_strlen(line_content);
-	make_line_format_suitable(line_content, &line_len);
-	wall_chars_count = 0;
-	while (i < line_len)
+	if (line_content)
 	{
-		if (line_content[i] == '1' || line_content[i] == ' ')
-			wall_chars_count++;
-		else
-			break ;
-		i++;
+		i = 0;
+		line_len = ft_strlen(line_content);
+		make_line_format_suitable(line_content, &line_len);
+		wall_chars_count = 0;
+		while (i < line_len)
+		{
+			if (line_content[i] == '1' || line_content[i] == ' ')
+				wall_chars_count++;
+			else
+				break ;
+			i++;
+		}
+		if (wall_chars_count == line_len && (wall_chars_count != 0))
+			return (0);
 	}
-	if (wall_chars_count == line_len && (wall_chars_count != 0))
-		return (0);
 	return (1);
 }
 

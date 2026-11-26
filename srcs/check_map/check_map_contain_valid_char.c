@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 11:24:56 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/07 13:43:57 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 23:49:27 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_contain_valid_char(t_map_cont_list *map, char *valid_chars)
 		while (traversal_map.i < traversal_map.node->line_len)
 		{
 			traversal_map.j = 0;
-			while (traversal_map.j < 7)
+			while (traversal_map.j < 8)
 			{
 				if (traversal_map.node->line_content[traversal_map.i]
 					== valid_chars[traversal_map.j])
