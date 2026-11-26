@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_colors.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alkoc <alkoc@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/13 00:06:10 by alkoc            #+#    #+#             */
-/*   Updated: 2026/09/13 16:17:06 by alkoc           ###   ########.fr       */
+/*   Created: 2026/09/13 00:06:10 by alkoc             #+#    #+#             */
+/*   Updated: 2026/11/26 21:13:39 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,15 @@ int	read_colors(int id, char *str, t_map_conf_info *conf)
 	while (i < 3)
 	{
 		if (id == 4)
+		{
 			conf->c_rgb_colors[i] = rgb[i];
+			conf->c_saved = 'y';
+		}
 		else
+		{
 			conf->f_rgb_colors[i] = rgb[i];
+			conf->f_saved = 'y';
+		}
 		i++;
 	}
 	return (1);

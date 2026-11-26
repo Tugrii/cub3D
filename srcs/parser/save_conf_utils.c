@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 23:29:58 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/25 23:42:43 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 21:22:17 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,27 @@ int	if_is_null_return_true(char **content)
 		return (1);
 	}
 	free_content(content);
-	return (err_msg_int('4'));
+	return (err_msg_int('4', NULL));
+}
+
+int	does_have_all_conf(t_map_conf_info *conf_info)
+{
+	int	validty_flag;
+
+	validty_flag = 1;
+	if (!conf_info->w_texture_name)
+		validty_flag = err_msg_int('7', "WE configuration");
+	if (!conf_info->n_texture_name)
+		validty_flag = err_msg_int('7', "NO configuration");
+	if (!conf_info->e_texture_name)
+		validty_flag = err_msg_int('7', "EA configuration");
+	if (!conf_info->s_texture_name)
+		validty_flag = err_msg_int('7', "SO configuration");
+	if (conf_info->c_saved == 'n')
+		validty_flag = err_msg_int('7', "C configuration");
+	if (conf_info->f_saved == 'n')
+		validty_flag = err_msg_int('7', "F configuration");
+	if (!validty_flag)
+		return (0);
+	return (1);
 }
