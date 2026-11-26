@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:52:54 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/22 22:14:29 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 01:23:07 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 	int		check_config(t_map_conf_info *conf);
 	int		map_name_checking(char *map_name);
 	int		create_fd(int *fd, char *map_name);
-	int		create_maps_linked_list(char *line_content, int fd, t_map_cont_list **map);
+	int		create_maps_linked_list(char *line_content, int fd, t_map_all_infos *map_infos);
 	int		check_map_has_only_one_raydir(t_map_cont_list *map, char *raydirs);
 	int		split_maps_configuration_and_content(int fd, t_map_all_infos *map_infos);
 	void	init_map_info(t_map_all_infos *info);
