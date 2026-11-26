@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 11:26:21 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/26 01:21:09 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 21:49:52 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ int	create_maps_linked_list(char *line_content, int fd, t_map_all_infos *map_inf
 	t_map_cont_list	*new_map_list_node;
 
 	map_infos->map_cont = NULL;
+	if (!line_content)
+		err_msg_int('8', NULL);
 	while (line_content)
 	{
 		new_map_list_node = set_new_map_node(line_content);
@@ -90,6 +92,6 @@ int	create_maps_linked_list(char *line_content, int fd, t_map_all_infos *map_inf
 		}
 	}
 	if (does_have_extra_line(fd))
-		return (err_msg_int('6'));
+		return (err_msg_int('6', NULL));
 	return (1);
 }

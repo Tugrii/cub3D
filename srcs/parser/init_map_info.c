@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 18:26:47 by alkoc             #+#    #+#             */
-/*   Updated: 2026/10/22 00:02:50 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 21:10:24 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	init_map_info(t_map_all_infos *info)
 	info->map_conf.s_texture_name = NULL;
 	info->map_conf.w_texture_name = NULL;
 	info->map_conf.e_texture_name = NULL;
+	info->map_conf.c_saved = 'n';
+	info->map_conf.f_saved = 'n';
 	i = 0;
 	while (i < 3)
 	{

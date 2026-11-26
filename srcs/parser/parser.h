@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 12:06:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/26 01:22:47 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 21:15:16 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_map_conf_info
 	char	*s_texture_name;
 	int		c_rgb_colors[3];
 	int		f_rgb_colors[3];
+	char	c_saved;
+	char	f_saved;
 }t_map_conf_info;
 
 typedef struct	s_map_all_infos
@@ -38,7 +40,7 @@ typedef struct	s_map_all_infos
 }t_map_all_infos;
 
 int		read_configs_and_save_it(char **content, t_map_conf_info *map_conf);
-int	create_maps_linked_list(char *line_content, int fd, t_map_all_infos *map_infos);
+int		create_maps_linked_list(char *line_content, int fd, t_map_all_infos *map_infos);
 void	make_line_format_suitable(char *line_content, int *line_len);
 int		read_colors(int id, char *str, t_map_conf_info *conf);
 void	init_map_info(t_map_all_infos *info);
@@ -48,4 +50,5 @@ void	free_content(char **content);
 int		is_saved_before(t_map_conf_info *conf_info, int identifier_no);
 int		run_if_not_wall(char	*line_content);
 char	*skip_white_spaces_return_lead(char *content);
+int		does_have_all_conf(t_map_conf_info *conf_info);
 #endif

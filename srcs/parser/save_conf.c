@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/25 23:53:15 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/26 20:53:07 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 	char	*file_name;
 
 	if (is_saved_before(map_conf, identifier_no))
-		return (err_msg_int('5'));
+		return (err_msg_int('5', NULL));
 	file_name = ft_strdup(raw_file_name);
 	if (!file_name)
 		malloc_error_at_start(map_conf);
@@ -33,7 +33,7 @@ int	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 		map_conf->e_texture_name = file_name;
 	else if (identifier_no == 4 || identifier_no == 5)
 		if (!read_colors(identifier_no, file_name, map_conf))
-			return (err_msg_int('3'));
+			return (err_msg_int('3', NULL));
 	return (1);
 }
 
