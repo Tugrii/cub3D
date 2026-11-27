@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 21:33:21 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/27 01:37:17 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/28 01:42:37 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	check_map(int argc, char **argv, int *fd, t_map_all_infos **map_info)
 	if (!create_fd(fd, argv[1]))
 		return (err_msg_int_2('3'));
 	if (!split_maps_configuration_and_content(*fd, *map_info))
-		return (0);
+		return (free_map_info(*map_info), 0);
 	if (!check_contain_valid_char((*map_info)->map_cont, "01NSEW "))
 		validty_flag = err_msg_int('9', NULL);
 	if(!check_map_has_only_one_raydir((*map_info)->map_cont, "NSEW"))

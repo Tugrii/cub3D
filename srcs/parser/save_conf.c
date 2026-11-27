@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:27:59 by tgeler            #+#    #+#             */
-/*   Updated: 2026/11/26 20:53:07 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/28 02:04:38 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ int	save_it(int identifier_no, char *raw_file_name, t_map_conf_info *map_conf)
 	else if (identifier_no == 3)
 		map_conf->e_texture_name = file_name;
 	else if (identifier_no == 4 || identifier_no == 5)
+	{
 		if (!read_colors(identifier_no, file_name, map_conf))
 			return (err_msg_int('3', NULL));
+		free(file_name);
+	}
 	return (1);
 }
 
@@ -119,7 +122,7 @@ int	read_configs_and_save_it(char **content, t_map_conf_info *map_conf)
 	if (raw_file_name)
 	{
 		if (!save_it(identifier_no, raw_file_name, map_conf))
-			return (0);
+			return (free_content(content), 0);
 	}
 	else
 		return (if_is_null_return_true(content));

@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:29:14 by tgeler            #+#    #+#             */
-/*   Updated: 2026/10/07 13:43:57 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/28 01:52:48 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ char	*fill_buffer(char **stash, char **line, int fd);
 char	*last_stash_controls(char **stash, char **line,
 			char **buffer, int bytes_read);
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 1
 # endif
 #endif

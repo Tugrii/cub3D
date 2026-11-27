@@ -6,7 +6,7 @@
 /*   By: <tgeler@stundent.42.istanbul.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 00:07:29 by alkoc             #+#    #+#             */
-/*   Updated: 2026/10/22 22:15:11 by tgeler           ###   ########.fr       */
+/*   Updated: 2026/11/28 02:18:30 by tgeler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ static void free_map_arr(t_map_all_infos *info)
 
 	i = 0;
 	traversal = info->map_cont;
+	if (!traversal)
+		return ;
 	while (traversal)
 	{
 		free(info->map_cont_arr[i]);
